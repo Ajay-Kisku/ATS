@@ -1,0 +1,4 @@
+Django==4.2.4
+openai==0.27.8
+PyPDF2==3.0.1
+yagmail==0.15.293
