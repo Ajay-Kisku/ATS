@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'hr.css' %}">
+    <!-- <link href='.\tableResources\style.css' rel='stylesheet'> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="{% static 'color-modes.js' %}"></script>
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+  
+        .b-example-divider {
+          width: 100%;
+          height: 3rem;
+          background-color: rgba(0, 0, 0, .1);
+          border: solid rgba(0, 0, 0, .15);
+          border-width: 1px 0;
+          box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+  
+        .b-example-vr {
+          flex-shrink: 0;
+          width: 1.5rem;
+          height: 100vh;
+        }
+  
+        .bi {
+          vertical-align: -.125em;
+          fill: currentColor;
+        }
+  
+        .nav-scroller {
+          /* position: relative; */
+          z-index: 2;
+          height: 2.75rem;
+          overflow-y: hidden;
+        }
+  
+        .nav-scroller .nav {
+          display: flex;
+          flex-wrap: nowrap;
+          padding-bottom: 1rem;
+          margin-top: -1px;
+          overflow-x: auto;
+          text-align: center;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+        }
+  
+        .btn-bd-primary {
+          --bd-violet-bg: #712cf9;
+          --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  
+          --bs-btn-font-weight: 600;
+          --bs-btn-color: var(--bs-white);
+          --bs-btn-bg: var(--bd-violet-bg);
+          --bs-btn-border-color: var(--bd-violet-bg);
+          --bs-btn-hover-color: var(--bs-white);
+          --bs-btn-hover-bg: #6528e0;
+          --bs-btn-hover-border-color: #6528e0;
+          --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+          --bs-btn-active-color: var(--bs-btn-hover-color);
+          --bs-btn-active-bg: #5a23c8;
+          --bs-btn-active-border-color: #5a23c8;
+        }
+        .bd-mode-toggle {
+          z-index: 1500;
+        }
+    </style>
+
+  </head>
+<body style="background-color: #212529;">
+
+    <!-- <header>
+        <h1 class="new">HR DASHBOARD</h1>
+        <hr> 
+    </header>  -->
+
+
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> -->
+          <img src="{% static 'atslogo.png' %}" alt="" height="50px" width="50px" >
+          <span class="fs-4">Aj Industries</span>
+        </a>
+  
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        </ul>
+      </header>
+    </div>
+
+
+    <div class="b-example-divider"></div>
+
+    <div class="d-flex align-items-start" style="margin: 10px;">
+        <!-- Navigation Pannel -->
+        <div class="stickIt nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <span class="fs-4" style="font-size: 50px; margin: 15px; font-weight: bold; margin-bottom: 0px;">HR</span>
+          <span class="fs-4" style="margin: 15px; margin-top: 2px; font-weight: bold;">DASHBOARD</span>
+          <!-- <hr width="10px"> -->
+
+          <button class="nav-link active" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true">Add Job </button>
+          <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Statistics</button>
+          <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Screening Round</button>
+          <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Web Devs</button>
+          <button class="nav-link" id="v-pills-others-tab" data-bs-toggle="pill" data-bs-target="#v-pills-others" type="button" role="tab" aria-controls="v-pills-others" aria-selected="false">Others</button>
+        </div>
+
+        <!-- Contents -->
+        <div class="tab-content" id="v-pills-tabContent">
+
+          
+          <div class="tab-pane fade " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <h1>Here are our web developers</h1> <br>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{% static 'adj.jpeg' %}" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Ajay Kisku</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{% static 'rohit1.jpg' %}" class="img-fluid rounded-start" style="filter: sepia();" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Rohit Deswali</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          
+
+
+          <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+            <div class="section1">
+                <div class="descriptionTitle element1">
+        
+                    <div class="bigText">Welcome to the ATS Dashboard</div>
+                    <p>
+                      <br>
+                      Welcome to our HR Dashboard, your hub for optimizing talent acquisition. The HR team's role in scouting, selecting, and integrating 
+                      talents is pivotal. With tools to streamline recruitment and evaluate profiles, our ATS empowers choices aligned with our ethos. The
+                      Dashboard offers efficiency, clarity, and synergy, providing real-time access to applicant data, interviews, and 
+                      progress. Adapting swiftly in talent acquisition's dynamic realm, this platform ensures modernity and strength. Your
+                      commitment to diversity and a thriving team propels us forward. Together, we sculpt destiny by attracting individuals who drive unified prosperity. 
+                    </p>
+                    <p>
+                      Here you can and new job openings.
+                    </p>
+                 </div>
+                <form method="post" target="/hr">
+                  {% csrf_token %}
+                  <div class="issueJobDescriptionForm element1">
+              
+                      <form action="" class="jobDescription" style="display: inline-block;">
+                          
+                          <textarea id="discription" 
+                          placeholder="Write a job description here..."
+                          rows="16" cols="60" name="discription" required autocomplete autofocus></textarea>
+              
+                          <br>
+                          <input type="password" class="inputkey" show="*" placeholder="  Enter your HR Key" required>
+                          <input type="submit" class="submit" value="Submit">
+                      </form>
+                  </div>
+                </form>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <form method="post">
+                  <div class="cards row-1">
+                      <div class="cardx card1 TotalApplicant">
+                          <div class="heading totalCandidates"> Total Candidates</div>
+                          <!-- <div class="TotalNumber">200</div> -->
+                          
+                      </div>
+
+                      <div class="rightArrow" style="user-select: none; color: #aeaeae;">></div>
+
+              
+                      <div class="cardx card2 TotalApplicant">
+                          <div class="heading shortListing"> Short Listed Candidates</div>
+                          <!-- <div class="TotalNumber">100</div> -->
+                          
+                      </div>
+
+                      <div class="rightArrow" style="user-select: none; color: #aeaeae;">></div>
+
+              
+                      <div class="cardx card3 TotalApplicant">
+
+                        
+                          <div class="heading FinalCandidates"> Selected Candidates</div>
+                        
+                          
+                          <!-- <div class="TotalNumber">5</div> -->
+                          
+                      </div>
+
+                      <!-- <div class="rightArrow" style="user-select: none; color: #aeaeae;">></div>
+                      <div class="cardx card4 TotalApplicant">
+                          <div class="heading"> Selected Candidate</div>
+                          <div class="TotalNumber">Ajay Kisku</div> 
+                          
+                      </div> -->
+              
+              
+                  
+            </form>
+          </div>
+
+              <br>
+
+              <table id='sort' class="tableCustom totalCandidate">
+                <thead>
+                  <tr>
+                    
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Resume</th>
+                  
+
+                  </tr>
+                </thead>
+                <tbody>
+
+                
+                {% for object in products %} 
+                <tr>
+                    {% with b=forloop.counter %}
+                    <td>#</td>
+                    <td>{{object.name}}</td>
+                    <td><a href="mailto:{{ object.email }}">{{ object.email }}</a></td>
+                    
+                    <td>{{object.pdf}}</td>
+                    </tr>
+                    {% endwith %}
+                {% endfor %}
+              
+
+                </tbody>
+                </table>
+
+
+                <table class="tableScreeningCandidates" style="display: none;">
+                  
+                  <thead>
+                    <tr>
+                      
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Score</th>
+                      <th>Skills</th>
+                      <th>Resume</th>
+  
+                    </tr>
+                  </thead>
+                  <tbody>
+
+
+                      {% for object in products %} 
+                      
+                      {% if object.score >= 3 %}
+                      <tr>
+                          {% with a=forloop.counter %}
+                          <td>{{ a }}</td> 
+                          <td>{{object.name}}</td>
+                          <td><a href="mailto:{{ object.email }}">{{ object.email }}</a></td>
+                          <td>{{object.score}}</td>
+                          <td>{{object.skills}}</td>                          
+                          <td>{{object.pdf}}</td>
+                          </tr>
+                          {% endwith %}
+                          {% endif %}
+                      
+                      {% endfor %}
+
+                  <tbody>
+
+
+                </table>
+                <table class="tableFinalCandidates" style="display: none;">
+                  
+                  <thead>
+                    <tr>
+                      
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Resume</th>
+  
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <td>1</td>
+                    <td>ALYSSA JACKSON</td>
+                    <td><a href="mailto:al_jackson@gmail.com">al_jackson@gmail.com</a></td>
+                    <td><a href="{{ object.pdf }}">view</a></td>
+                    </tr>
+
+<!-- 
+                    {% for object in products %} 
+                    <tr>
+                        {% with b=forloop.counter %}
+                        <td>{{b}}</td>
+                        <td>{{object.name}}</td>
+                        <td><a href="mailto:{{ object.email }}">{{ object.email }}</a></td>
+                        <td><a href="{{ object.pdf }}">view</a></td>
+                        </tr>
+                        {% endwith %}
+                    {% endfor %} -->
+                  
+
+                  <tbody>
+
+
+                </table>
+          
+            </div>
+
+
+          <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Screening Result Here
+
+          <div class="screeningAnswers" style="width: 700px;">
+            <form >
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input value="al_jackson@gmail.com" type="email"  class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+
+              <br>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input value="ALYSSA JACKSON" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rohit Deswali">
+              </div>
+
+
+
+              <br>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  Describe the differences between a list and a tuple in Python. When would you choose one over the other for storing data?
+                </label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">A list is mutable (modifiable) and defined using square brackets [], while a tuple is immutable (unchangeable) and defined using parentheses (). Use lists when you need to modify elements, and tuples for static data like coordinates.
+                </textarea>
+              </div>
+              <br>
+
+              <br>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  Given an array of integers, write a function to find the two numbers that add up to a specific target sum. Provide the time complexity of your solution.
+                </label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Use a hash map to store visited numbers while iterating through the array. For each number, check if the difference between the target sum and the current number exists in the hash map. This solution has a time complexity of O(n).
+
+                </textarea>
+              </div>
+              <br>
+
+              <br>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  Suppose you have a database table called "Users" with columns "id," "username," and "email." Write an SQL query to retrieve all unique email addresses that are associated with more than one user.
+                </label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">SELECT email
+FROM Users
+GROUP BY email
+HAVING COUNT(email) > 1;
+
+                </textarea>
+              </div>
+              <br>
+
+              <br>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Explain the purpose of version control and why tools like Git are essential for collaborative software development projects.</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Version control tracks changes in code over time, enabling collaboration among developers. Git allows branching, merging, and history tracking, making it easy to work together on codebases and revert changes if needed.</textarea>
+              </div>
+              <br>
+              <br>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">How would you optimize the performance of a web page that loads slowly due to excessive HTTP requests? Provide at least three strategies or techniques.</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">To optimize web page performance, minimize HTTP requests by combining CSS and JS files, use image sprites, and leverage browser caching. Additionally, reduce server response time, enable compression, and prioritize above-the-fold content loading.</textarea>
+              </div>
+              <br>
+
+              <button type="submit" class="btn btn-primary" >Accepted</button>
+            </form>
+          </div>
+
+          <div class="screeningAnswers" style="width: 700px;">
+            <form >
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Example select</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect2">Example multiple select</label>
+                <select multiple class="form-control" id="exampleFormControlSelect2">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+
+
+
+          </div>
+          <div class="tab-pane fade" id="v-pills-others" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+            
+        </div>
+      </div>
+
+
+
+
+
+<!--  ============================================================================================================== -->
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <p class="jobDescription">
+
+        </p>
+
+
+
+    </div>
+
+
+
+    <script>
+
+            //==================================================================
+            var tableTotalCandidates = document.querySelector(".tableCustom");
+            var tableScreeningCandidates = document.querySelector(".tableScreeningCandidates");
+            var tableFinalCandidates = document.querySelector(".tableFinalCandidates");
+            
+      
+            document.querySelector(".totalCandidates").addEventListener('click', function() {
+
+              tableTotalCandidates.style.display = "block";
+              tableScreeningCandidates.style.display = "none";
+              tableFinalCandidates.style.display = "none";
+
+            });
+
+            document.querySelector(".FinalCandidates").addEventListener('click', function() {
+
+              tableTotalCandidates.style.display = "none";
+              tableScreeningCandidates.style.display = "none";
+              tableFinalCandidates.style.display = "block";
+
+            });
+
+
+
+            document.querySelector(".shortListing").addEventListener('click', function() {
+              var form = document.querySelector("form");
+              var table = document.querySelector(".tableCustom");
+              var tableScreeningCandidates = document.querySelector(".tableScreeningCandidates");
+
+
+              tableTotalCandidates.style.display = "none";
+              tableFinalCandidates.style.display = "none";
+
+              tableScreeningCandidates.style.display = "block";
+
+
+              var formData = new FormData(form);
+
+              console.log("Sortlist the candidates")
+              console.log("Send Screening Email");
+
+              //fetch it from database and store it here
+              //set the global counter at view
+              //sortlisting should be done only once
+              isSortlisting = 0;
+
+              if(isSortlisting != 0){
+                fetch('upload', {
+                    method: 'POST',
+                    body: formData
+                }).then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').textContent = data.message;
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+
+                isSortlisting = 1;
+              }
+
+            });
+
+
+    </script>
+
+<!-- Table Resources================================================================================================ -->
+    
+
+  <script src='.\tableResources\tape.js'></script>
+
+  <script src='.\tableResources\src\tablesort.js'></script>
+  <script src='.\tableResources\src\tablesort.dotsep.js'></script>
+  <script src='.\tableResources\src\tablesort.filesize.js'></script>
+  <script src='.\tableResources\src\tablesort.date.js'></script>
+  <script src='.\tableResources\src\tablesort.number.js'></script>
+  <script src='.\tableResources\src\tablesort.monthname.js'></script>
+  
+  <script>
+  table = document.getElementById('sort');
+  tableDescend = document.getElementById('sort-descend');
+  tableExclude = document.getElementById('sort-exclude');
+  tableDefault = document.getElementById('sort-default');
+  tableRefresh = document.getElementById('sort-refresh');
+  tableMulti = document.getElementById('sort-multi');
+  tableSortRowSet = document.getElementById('sort-row-set');
+  tableSortRowAuto = document.getElementById('sort-row-auto');
+  tableSortColumnKeys = document.getElementById('sort-column-keys');
+  tableSortCustomAttr = document.getElementById('sort-custom-attribute');
+  new Tablesort(table);
+  new Tablesort(tableDescend, { descending: true });
+  new Tablesort(tableExclude);
+  new Tablesort(tableDefault);
+  new Tablesort(tableMulti);
+  new Tablesort(tableSortRowSet);
+  new Tablesort(tableSortRowAuto);
+  new Tablesort(tableSortColumnKeys);
+  new Tablesort(tableSortCustomAttr, { sortAttribute: "data-realname" });
+  var refresh = new Tablesort(tableRefresh);
+  
+  var rowCount = tableRefresh.rows.length;
+  var row = tableRefresh.insertRow(rowCount);
+  var cellName = row.insertCell(0);
+	  cellName.innerHTML = 0;
+  
+  refresh.refresh();
+  </script>
+  
+  <script src='\tableResources\spec\tablesort.js'></script>
+  <script src='\tableResources\spec\dotsep.js'></script>
+  <script src='\tableResources\spec\multibody.js'></script>
+  <script src='\tableResources\spec\filesize.js'></script>
+  <script src='\tableResources\spec\date.js'></script>
+  <script src='\tableResources\spec\number.js'></script>
+  <script src='\tableResources\spec\monthname.js'></script>
+
+<!-- Table Resources End================================================================================================ -->
+
+    
+</body>
+</html>

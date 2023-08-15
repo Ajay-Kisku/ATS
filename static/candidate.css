@@ -1,0 +1,237 @@
+
+.FlexBoxContainer{
+    display: flex;
+    /* flex-direction: column; */
+    /* direction: rtl; */
+
+}
+
+.uploadTxt{
+    font-size: 20px;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+
+main{
+    /* display: block; */
+    /* background-color: #0E2954; */
+    color: whitesmoke;
+    margin: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    /* box-shadow:  7px -3px 12px 0px rgba(0, 0, 0, 0.7) */
+    /* box-shadow: -1px 1px 12px 0px rgba(0, 0, 0, 0.7); */
+    
+}
+
+
+input{
+    display: block;
+}
+
+.submit {
+    border-radius: 3px;
+    /* background-color: brown; */
+    padding: 0px;
+    margin: 5px;
+    margin-top: 2px;
+}
+button{
+    border-radius: 3px;
+    /* background-color: brown; */
+    padding: 0px;
+    margin: 5px;
+    background-color: #64CCC5;
+    width: 120px;
+    height: 40px;
+    border: 0px;
+    text-decoration: dotted;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(41, 41, 41);
+
+}
+.ResumeUpload{
+
+    border: 1px dashed;
+    border-radius: 2px;
+    padding: 5px;
+
+}
+
+form{
+    /* background-color: #176B87; */
+    border-radius: 6px;
+    margin: 0px;
+    
+    padding: 10px;
+}
+
+.extend{
+    width: 600px;
+}
+
+.photoContainer{
+    position: static;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    /* margin: 0px; */
+    margin-left: 0px;
+    margin-right: 0px;
+    background-image: url("/static/hero.jpg");
+    box-shadow: 1px 5px 10px 0px black;
+    object-fit: fill;
+
+    /* background-repeat: repeat-x; */
+    /* background-size: contain; */
+}
+
+.realBox{
+    /* margin: 1px; */
+    padding-left: 50px;
+    text-align: center;
+}
+.submit{
+    
+    background-color: #64CCC5;
+    width: 300px;
+    height: 40px;
+    border: 0px;
+    text-decoration: dotted;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(41, 41, 41);
+
+}
+
+.submit:hover{
+    background-color: #5bc2bb;
+    width: 300px;
+    border: 0px;
+    box-shadow: 2px 2px 2px ;
+    font-size: 18px;
+    cursor: pointer;
+    text-shadow: 0.5px 0.6px 1px #ffffff;
+    /* text-transform: uppercase;
+    letter-spacing: 10px; */
+}
+
+.email{
+    width: 300px;
+    border: 0px;
+    background-color: #212529;
+    margin-bottom: 11px;
+    border-radius: 2px;
+    padding: 3px;
+    /* box-shadow: 2px 2px 2px; */
+    /* -webkit-appearance: none; */
+}
+
+.email::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(172, 172, 172);
+    opacity: 1; /* Firefox */
+  }
+  
+.email:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(172, 172, 172);
+
+}
+  
+.email::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(172, 172, 172);
+
+}
+
+.email:focus,
+.email:active {
+   border: 0px;
+   background: none;
+   outline: none;
+   /* -webkit-appearance: none; */
+}
+
+.ResumeUpload[type="file"] {
+    margin-left: 3px !important;
+}
+.ResumeUpload::-webkit-file-upload-button {
+    display: none;
+}
+
+.showPdf{
+    background-color: #0E2954;
+    color: whitesmoke;
+    margin-top: 50px;
+    /* padding: 5px; */
+    /* border-radius: 10px; */
+
+    /* max-width: 500px; */
+}
+
+object{
+    display: none;
+    border-radius: 10px;
+}
+
+.Suggestions{
+    display: none;
+    /* height: 580px;
+    width: 100vh; */
+    color: aliceblue;
+    /* background-color: rgb(61, 61, 61); */
+    margin: 50px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+error{
+    display: none;
+    color: rgb(240, 220, 47);
+    /* margin-bottom: 1px; */
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0px;
+        border-radius: 0px;
+        background-color: lightblue;
+    }
+
+    .FlexBoxContainer{
+        display: flex;
+        flex-direction: column;
+        /* direction: rtl; */
+    
+    }
+
+    main{
+        background-color: #0E2954;
+        color: whitesmoke;
+        margin: 0px;
+        padding: 15px;
+        border-radius: 0px;
+    
+        max-width: 100%;
+    }
+
+    object{
+        margin-top: 5px;
+        height: 100vh;
+        width: 100%;
+        display: none;
+        border-radius: 0px;
+    }
+
+    .Suggestions{
+        height: 580px;
+        max-width: 100%;
+        background-color: rgb(20, 72, 216);
+        margin-top: 5px;
+        margin: 0px;
+        border-radius: 0px;
+    }
+    
+
+}

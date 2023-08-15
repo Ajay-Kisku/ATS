@@ -1,0 +1,91 @@
+.HeroText{
+    font-size: 70px;
+    margin : 40px;
+    text-align: center;
+    font-family:  Georgia, serif;
+
+}
+.frame{
+    height: 200px;
+    width: 250px;
+    /* background-color:  #0E2954;*/
+    background: linear-gradient(45deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%); 
+    /* border: 2px; */
+
+    margin: auto;
+    width: 50%;
+    /* border: 2px solid brown; */
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 2px 2px 5px black;
+}
+
+.continue{
+    color: whitesmoke;
+    font-size: 40px;
+    text-shadow: 2px 1px 2px red;
+
+}
+
+button{
+    flex: content;
+    height: 60px;
+    width: 120px;
+    margin: 10px;
+    font-size: 20px;
+    background-color: #4FC0D0;
+    border-radius: 8px;
+    border: 0px;
+    box-shadow: 1px 1px 3px rgb(90, 90, 90);
+
+
+}
+
+button:hover{
+    box-shadow: 2px 2px 2px black;
+}
+
+@media only screen and (max-width: 600px) {
+    .HeroText{
+        font-size: 40px;
+        margin : 5px;
+        text-align: center;
+        font-family:  Georgia, serif;
+    
+    }
+
+    main{
+        background: linear-gradient(45deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%); 
+        border-radius: 10px;
+    }
+    .frame{
+        height: 250px;
+        width: 335px;
+        /* background-color:  #0E2954;*/
+        background: linear-gradient(45deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%); 
+        /* border: 2px; */
+        
+        margin: 2px;
+        margin-top: 10px;
+        /* border: 2px solid brown; */
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 2px 2px 5px black;
+    }
+
+    button{
+        width: 250px;
+        scale: 0.8;
+        margin: 5px;
+    
+    }
+
+    .continue{
+        color: whitesmoke;
+        margin: 5px;
+        padding: 10px;
+        font-size: 30px;
+        text-shadow: 2px 1px 2px red;
+    
+    }
+}
